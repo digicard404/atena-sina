@@ -5,18 +5,18 @@ document.addEventListener("click", () => {
     video.play();          // ادامه پلی
 }, { once: true });         // فقط یک بار اجرا شود
 
-// تاریخ مراسم:
-let weddingDate = new Date("2026-1-1 19:00:00").getTime();
+// تاریخ مراسم — نسخه کاملاً سازگار با سافاری
+let weddingDate = new Date(2026, 0, 1, 19, 0, 0).getTime();
 
 function updateTimer() {
-    let now = new Date().getTime();
+    let now = Date.now();
     let diff = weddingDate - now;
 
     if (diff <= 0) {
-        document.getElementById("day").innerHTML = "0";
-        document.getElementById("hour").innerHTML = "0";
-        document.getElementById("min").innerHTML = "0";
-        document.getElementById("sec").innerHTML = "0";
+        day.innerHTML = "0";
+        hour.innerHTML = "0";
+        min.innerHTML = "0";
+        sec.innerHTML = "0";
         return;
     }
 
@@ -25,10 +25,10 @@ function updateTimer() {
     let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById("day").innerHTML = days;
-    document.getElementById("hour").innerHTML = hours;
-    document.getElementById("min").innerHTML = minutes;
-    document.getElementById("sec").innerHTML = seconds;
+    day.innerHTML = days;
+    hour.innerHTML = hours;
+    min.innerHTML = minutes;
+    sec.innerHTML = seconds;
 }
 
 setInterval(updateTimer, 1000);
