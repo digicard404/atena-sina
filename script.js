@@ -6,7 +6,7 @@ document.addEventListener("click", () => {
 }, { once: true });         // فقط یک بار اجرا شود
 
 // تاریخ مراسم:
-let weddingDate = new Date("2025-12-17 18:00:00").getTime();
+let weddingDate = new Date("2026-1-1 19:00:00").getTime();
 
 function updateTimer() {
     let now = new Date().getTime();
