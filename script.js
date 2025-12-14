@@ -6,7 +6,7 @@ document.addEventListener("click", () => {
 }, { once: true });         // فقط یک بار اجرا شود
 
 // تاریخ مراسم — نسخه کاملاً سازگار با سافاری
-let weddingDate = new Date(2026, 0, 1, 19, 0, 0).getTime();
+let weddingDate = new Date(2026, 0, 1, 18, 0, 0).getTime();
 
 function updateTimer() {
     let now = Date.now();
@@ -31,7 +31,7 @@ function updateTimer() {
     sec.innerHTML = seconds;
 }
 
-setInterval(updateTimer, 1000);
+setInterval(updateTimer, 1000) 
 
 
 function sendRSVP(status) {
